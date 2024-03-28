@@ -30,27 +30,36 @@ ssd.c
 testshell.c
 
 write R 0x????????-> nand.txt에 해당하는 LBA R에 0x???????? 저장 
+
+
 read R -> nand.txt에 해당하는 LBA R을 result.txt에 저장
 
 
 ---
 
 
-## 빌드 방법
+## 빌드 방법 (Ubuntu 20.04)
 
-**Ubuntu 20.04**
 
 gcc -o shell source.c
+
 gcc -o ssd ssd.c
 
 nand.txt (초기 400바이트 이기 때문에 0 800개 설정)
+
 result.txt (초기 설정 x, 하나의 LBA만 읽어옴)
 
 
 명령어
 write: SSD에 쓰기 (예: write 3 0x12345678)
+
 read: 특정 LBA 읽기 (예: read 3)
+
 fullwrite: 전체 SSD에 쓰기 (예: fullwrite 0x13467988)
+
 fullread: 전체 SSD 읽기 (예: fullread)
+
+
 exit: 쉘 종료 (예: exit)
+
 help: 명령어 표시 (예: help)
